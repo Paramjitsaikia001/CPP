@@ -1,4 +1,4 @@
-//logical AND &&
+//logical operator
 
 #include<iostream>
 using namespace std;

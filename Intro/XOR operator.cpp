@@ -4,6 +4,6 @@ using namespace std;
 int main(){
     int x=5;
     x^=3;
-    cout<<"the final result="<x;
-    // return 0;
+    cout<<"the final result="<<x;
+    return 0;
 }

@@ -19,7 +19,7 @@ int main(){
 
     //second method of concatenation usin function
     FullName=firstName.append(lastName);
-    cout<<"using function the full name is "<<FullName;
+    cout<<"\nusing function the full name is "<<FullName;
 
     return 0;
 }
