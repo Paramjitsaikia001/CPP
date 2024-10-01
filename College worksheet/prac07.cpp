@@ -22,31 +22,31 @@ public:
         real = a;
         imag = b;
     }
-    friend ostream& operator<<(ostream &out, const complex &c);
-    friend istream& operator>>(istream &in,  complex &c);
+    friend ostream &operator<<(ostream &out, const complex &c);
+    friend istream &operator>>(istream &in, complex &c);
     friend complex operator+(complex &c1, complex &c2);
     friend complex operator*(complex &c1, complex &c2);
 };
 
-ostream &operator<<(ostream& out, const complex& c)
+ostream &operator<<(ostream &out, const complex &c)
 {
-     if (c.imag >= 0) 
-    out << c.real << " + " << c.imag << "i";  // For positive imaginary part
-  else 
-    out << c.real << " - " << -c.imag << "i"; // For negative imaginary part
-  return out;
+    if (c.imag >= 0)
+        out << c.real << " + " << c.imag << "i"; // For positive imaginary part
+    else
+        out << c.real << " - " << -c.imag << "i"; // For negative imaginary part
+    return out;
 }
-istream &operator>>(istream& in, complex &c)
+istream &operator>>(istream &in, complex &c)
 {
     in >> c.real;
     in >> c.imag;
     return in;
 }
-complex operator+(complex& c1, complex& c2)
+complex operator+(complex &c1, complex &c2)
 {
     return complex((c1.real + c2.real), (c1.imag + c2.imag));
 }
-complex operator*(complex& c1, complex& c2)
+complex operator*(complex &c1, complex &c2)
 {
     return complex(c1.real * c2.real - c1.imag * c2.imag, c1.real * c2.imag + c1.imag * c2.real);
 }
