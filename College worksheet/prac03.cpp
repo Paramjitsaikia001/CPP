@@ -11,10 +11,10 @@ class circle{
         cin>>radius;
     }
     void area(){
-        cout<<"area of the circle of radius " <<radius<<"is: "<<3.14*radius*radius<<"\n";
+        cout<<"area of the circle of radius " <<radius<<" is: "<<3.14*radius*radius<<"\n";
     }
     void parameter(){
-        cout<<"parameter of the circle of radius "<<radius<<"is: "<<2*3.14*radius<<"\n"; 
+        cout<<"parameter of the circle of radius "<<radius<<" is: "<<2*3.14*radius<<"\n"; 
     }
 };
 int main(){
