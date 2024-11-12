@@ -1,0 +1,2 @@
+
+void hollowdiamond(int n)

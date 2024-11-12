@@ -1,20 +1,26 @@
-//convert a decimal to binary
+// convert a decimal to binary
 
-#include<iostream>
+#include <iostream>
 using namespace std;
-int dectodin(int n){
-    int rim;
-    int result=0;
-    int i=1;
-    while(n>0){
-      rim=n%2;
-      result=result+rim*i;
-      n/=2;
-      i*=10;
-    }
-    return result;
+int dectodin(int n)
+{
+  int rim;
+  int result = 0;
+  int i = 1;
+  while (n > 0)
+  {
+    rim = n % 2;
+    result = result + rim * i;
+    n /= 2;
+    i *= 10;
+  }
+  return result;
 }
-int main(){
-   cout<< dectodin(50);
-    return 0;
+int main()
+{
+  int n;
+  cout << "enter a decimal no: ";
+  cin >> n;
+  cout << dectodin(n);
+  return 0;
 }
