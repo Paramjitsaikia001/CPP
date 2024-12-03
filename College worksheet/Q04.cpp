@@ -72,7 +72,7 @@ void display(){
     if (imag >= 0)
             cout << real << " + " << imag << "i" << endl;
         else
-            cout << real << " - " << -imag << "i" << endl;
+            cout << real << " - " << imag << "i" << endl;
 }
 };
 int main(){

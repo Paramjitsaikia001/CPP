@@ -22,11 +22,11 @@ public:
         xordinate = a;
         yordinate = b;
     }
-    float dist()
+   double dist()
     {
         return sqrt(xordinate * xordinate + yordinate * yordinate);
     }
-    float slope(print &other)
+   double slope(print &other)
     {
         return (other.yordinate - yordinate) / (other.xordinate - xordinate);
     }
@@ -52,7 +52,8 @@ int main()
     print p2(3, 4);
     p2.dist();
     p2.displaydist();
-    p1.slope(p2);
+    print p3;
+    p3.slope(p2);
     p1.displayslope(p2);
     myfunction(p1,p2);
 
