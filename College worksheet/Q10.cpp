@@ -5,18 +5,21 @@ class person
 {
 public:
     static int age;
-    void display()
+    static void display()
     {
-        cout << age;
+        cout << age << endl;
     }
 };
+int person::age = 4;
 int main()
 {
     person p1;
-    p1.age = 10;
     p1.display();
-    // p1.age =12;
-    // cout<<p1.age<<endl;
-
+    person::display();
+    person p2;
+    p2.age = 12;
+    p2.display();
+    person p3;
+    p3.display();
     return 0;
 }
