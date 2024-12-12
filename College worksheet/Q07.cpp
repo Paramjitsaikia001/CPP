@@ -34,7 +34,7 @@ ostream &operator<<(ostream &out, const complex &c)
     if (c.imag >= 0)
         out << c.real << " + " << c.imag << "i"; // For positive imaginary part
     else
-        out << c.real << " - " << c.imag << "i"; // For negative imaginary part
+        out << c.real << " - " << -c.imag << "i"; // For negative imaginary part
     return out;
 }
 istream &operator>>(istream &in, complex &c)
