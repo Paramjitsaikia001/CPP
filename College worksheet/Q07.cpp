@@ -26,7 +26,7 @@ public:
     friend istream &operator>>(istream &in, complex &c);
     friend complex operator+(complex &c1, complex &c2);
     friend complex operator*(complex &c1, complex &c2);
-    friend complex operator--(complex &c);
+    friend complex operator-(const complex &c);
 };
 
 ostream &operator<<(ostream &out, const complex &c)
@@ -51,8 +51,9 @@ complex operator*(complex &c1, complex &c2)
 {
     return complex(c1.real * c2.real - c1.imag * c2.imag, c1.real * c2.imag + c1.imag * c2.real);
 }
-complex operator--(complex &c){
-    return complex(--c.real,--c.imag);
+complex operator-(const complex &c)
+{
+    return complex(-c.real, -c.imag);
 }
 int main()
 {
@@ -67,9 +68,8 @@ int main()
     cout << "c2: " << c2 << endl;
     complex c3 = c1 + c2;
     complex c4 = c1 * c2;
-    --c1;
     cout << "c1 + c2: " << c3 << endl;
     cout << "c1 * c2: " << c4 << endl;
-    cout << "--c1: " << c1 << endl;
+    cout << "-c1: " << -c1 << endl;
     return 0;
 }
