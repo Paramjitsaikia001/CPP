@@ -1,30 +1,53 @@
-/*Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
-An input string is valid if:
-
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
-Every close bracket has a corresponding open bracket of the same type.*/
-
-#include<iostream>
-#include<string>
+#include <iostream>
 using namespace std;
-class solution{
-    public:
-    bool isvalid(string s){
-        for(int i =0;i <s.length();i++){
-            if(s[0] = = "(")
+class complex
+{
+    float real, imag;
+
+public:
+    float rpart()
+    {
+        return real;
+    }
+    float ipart()
+    {
+        return imag;
+    }
+    complex()
+    {
+        real = imag = 0;
+    }
+    complex(float a)
+    {
+        real = imag = a;
+    }
+    complex(float a, float b)
+    {
+        real = a;
+        imag = b;
+    }
+    complex add(const complex &obj)
+    {
+        return complex(real + obj.real, imag + obj.imag);
+    }
+    complex multi(const complex &obj)
+    {
+        return complex(real * obj.real - imag * obj.imag, real * obj.imag + imag * obj.real);
+    }
+    void display()
+    {
+        if (imag <= 0)
+        {
+            cout << real << " - " << imag << "i" << endl;
         }
+        else
+            cout << real << " + " << imag << "i" << endl;
     }
-}
-
-
-
-int main(){
-    string s="Paramjit";
-    int n =8;
-    for(int i =0;i<n ;i++){
-
-    cout<<s[i]<<endl;
-    }
+};
+int main()
+{
+    complex c1(2, 3), c2(1, 9);
+    c2.add(c1).display();
+    complex add = c1.multi(c2);
+    add.display();
 }

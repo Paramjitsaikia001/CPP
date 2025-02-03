@@ -277,6 +277,39 @@ istream &operator>>(istream &in, complex2 &com)
    in >> com.imag;
    return in;
 }
+
+class Time
+{
+   int hours, minute, sec;
+
+public:
+   Time()
+   {
+      cout << "enter the hours ,minute and sec with space : ";
+      cin >> hours >> minute >> sec;
+      if ((hours < 0 || hours > 23) || (minute < 0 || minute > 59) || (sec < 0 || sec > 59))
+      {
+         cout << "this is invalid time " << endl;
+        hours =0;minute=0;sec=0;
+      }
+   }
+
+   void display()
+   {
+      if (hours < 10)
+         cout << "0";
+      cout << hours << ":";
+      if (minute < 10)
+         cout << "0";
+      cout << minute << ":";
+      if (minute < 10)
+         cout << "0";
+      cout << minute << ":";
+      if (sec < 10)
+         cout << "0";
+      cout << sec;
+   }
+};
 int main()
 {
    //    triangle t1(2,3,3),t2(1,1,1);
@@ -310,20 +343,24 @@ int main()
    // s1.reverse();
    // s1.display();
 
-   complex2 c4, c5;
-   cout << "Enter the a complex no: ";
-   cin >> c4;
-   cout << "Enter the a complex no: ";
-   cin >> c5;
-   complex2 multi = c4 * c5;
-   cout << " multiple of your complex no :";
-   cout << multi;
-   complex2 c1(2, 3), c2(4, 5);
-   complex2 c3 = c1 + c2;
-   cout << "sum of the two complex no 2+3i and 4+5i: ";
-   cout << c3;
-   cout << "your entered complex no : ";
-   cout << c4;
-   cout << -c4;
+   // complex2 c4, c5;
+   // cout << "Enter the a complex no: ";
+   // cin >> c4;
+   // cout << "Enter the a complex no: ";
+   // cin >> c5;
+   // complex2 multi = c4 * c5;
+   // cout << " multiple of your complex no :";
+   // cout << multi;
+   // complex2 c1(2, 3), c2(4, 5);
+   // complex2 c3 = c1 + c2;
+   // cout << "sum of the two complex no 2+3i and 4+5i: ";
+   // cout << c3;
+   // cout << "your entered complex no : ";
+   // cout << c4;
+   // cout << -c4;
+
+   Time t;
+   t.display();
+
    return 0;
 }

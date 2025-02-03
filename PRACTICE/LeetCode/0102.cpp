@@ -1,30 +1,35 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
 using namespace std;
-class solution
-{
+struct employee{
+    int empno;
+    char ename[20];
+    float basic,hra,da;
+    float calculate(){
+        return basic+hra+da;
+    }
+    void getdata(){
+        cout<<"enter the employee no: ";
+        cin>>empno;
+        cout<<"enter the e name : ";
+        cin>>ename;
+        cout<<"enter the basic: ";
+        cin>>basic;
+        cout<<"enter the hra: ";
+        cin>>hra;
+        cout<<"enter the da: ";
+        cin>>da;
+    }
+    void dispdata(){
+        cout<<"empno : "<<empno<<endl;
+        cout<<"ename : "<<ename<<endl;
+        cout<<"the net salary is : "<<calculate()<<endl;
 
-public:
-    vector<int> twosum(vector<int> &nums, int target)
-    {
-        vector<int> ans;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if ((nums[i] + nums[i + 1]) == target)
-            {
-                ans[0] = nums[i];
-                ans[1] = nums[i + 1];
-            }
-        }
-        return ans;
     }
 };
-int main()
-{
-    solution s1[10];
-    for (int i = 0; i < 6; i++)
-    {
-        cin >> s1[i];
-    }
-    twosum(s1,2);
+int main(){
+    employee e;
+    e.getdata();
+    cout<<"employee details: \n";
+    e.dispdata();
+    return 0;
 }
